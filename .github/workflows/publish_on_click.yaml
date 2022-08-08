@@ -45,7 +45,7 @@ jobs:
       # Combine all inputs into a single value for later steps to consume
       - name: Consolidate inputs
         id: consolidate-inputs
-        runs: |
+        run: |
           echo "::set-output name=destination_channel::${{ github.inputs.destination_channel || steps.select-channel.outputs.name }}"
           # Make charmcraft_credentials a masked value (eg: prevent it from printing in logs)
           # This should be redundant since it should come as a secret, but just in case..id
@@ -55,7 +55,7 @@ jobs:
 
       # DEBUG
       - name: is this still a protected value?
-        runs: echo "${{ steps.consolidate-inputs.outputs.charmcraft_credentials }}"
+        run: echo "${{ steps.consolidate-inputs.outputs.charmcraft_credentials }}"
 
       - name: Upload charm to charmhub
         uses: canonical/charming-actions/upload-charm@2.0.0-rc

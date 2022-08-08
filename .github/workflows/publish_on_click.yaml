@@ -40,17 +40,20 @@ jobs:
       - name: Select charmhub channel
         uses: canonical/charming-actions/channel@2.0.0-rc
         id: select-channel
-        if: ${{ github.inputs.destination_channel == '' }}
+        if: ${{ github.inputs.destination_channel != '' }}
 
       # Combine all inputs into a single value for later steps to consume
       - name: Consolidate inputs
         id: consolidate-inputs
         run: |
-          echo "::set-output name=destination_channel::${{ github.inputs.destination_channel || steps.select-channel.outputs.name }}"
+          destination_channel="${{ github.inputs.destination_channel || steps.select-channel.outputs.name }}"
+          echo "setting output of destination_channel=$destination_channel"
+          echo "::set-output name=destination_channel::$destination_channel"
           # Make charmcraft_credentials a masked value (eg: prevent it from printing in logs)
           # This should be redundant since it should come as a secret, but just in case..id
           credentials=${{ secrets.charmcraft-credentials || secrets.CHARMCRAFT_CREDENTIALS }}
           echo "::add-mask::$credentials"
+          echo "setting output of charmcraft_credentials=(not shown)"
           echo "::set-output name=charmcraft_credentials::$credentials"
 
       # DEBUG

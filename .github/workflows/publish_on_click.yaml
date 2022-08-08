@@ -1,5 +1,5 @@
 # reusable workflow for publishing all charms in this repo
-name: Publish
+name: Publish on click
 
 on:
   workflow_call:

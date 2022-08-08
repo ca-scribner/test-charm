@@ -44,6 +44,9 @@ jobs:
         charm-path: ${{ fromJson(needs.get-charm-paths.outputs.charm_paths_list) }}
 
     steps:
+      - name: Print inputs.destination_channel
+        run: echo "destination_channel = ${{ github.inputs.destination_channel }}"
+
       - name: Checkout
         uses: actions/checkout@v2
         with:

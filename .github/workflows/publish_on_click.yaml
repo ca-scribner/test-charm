@@ -45,7 +45,7 @@ jobs:
 
     steps:
       - name: Print inputs.destination_channel
-        run: echo "destination_channel = ${{ github.inputs.destination_channel }}"
+        run: echo "destination_channel = ${{ inputs.destination_channel }}"
 
       - name: Checkout
         uses: actions/checkout@v2
@@ -55,7 +55,7 @@ jobs:
       - name: Select charmhub channel
         uses: canonical/charming-actions/channel@2.0.0-rc
         id: select-channel
-        if: ${{ github.inputs.destination_channel == '' }}
+        if: ${{ inputs.destination_channel == '' }}
 
       # Combine inputs from different sources to a single canonical value so later steps don't
       # need logic for picking the right one
@@ -63,7 +63,7 @@ jobs:
         id: parse-inputs
         run: |
           # destination_channel
-          destination_channel="${{ github.inputs.destination_channel || steps.select-channel.outputs.name }}"
+          destination_channel="${{ inputs.destination_channel || steps.select-channel.outputs.name }}"
           echo "setting output of destination_channel=$destination_channel"
           echo "::set-output name=destination_channel::$destination_channel"
           

@@ -49,7 +49,7 @@ jobs:
           echo "::set-output name=destination_channel::${{ github.inputs.destination_channel || steps.select-channel.outputs.name }}"
           # Make charmcraft_credentials a masked value (eg: prevent it from printing in logs)
           # This should be redundant since it should come as a secret, but just in case..id
-          credentials=${{ github.secrets.charmcraft_credentials || steps.secrets.CHARMCRAFT_CREDENTIALS }}
+          credentials=${{ github.secrets.charmcraft-credentials || steps.secrets.CHARMCRAFT_CREDENTIALS }}
           echo "::add-mask::$credentials"
           echo "::set-output name=charmcraft_credentials::$credentials"
 

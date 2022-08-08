@@ -79,10 +79,10 @@ jobs:
             tag_prefix=''
           else
             tag_prefix=$(basename ${{ matrix.charm-path }} )
+          fi
           echo "setting output of tag_prefix=$tag_prefix"
           echo "::set-output name=tag_prefix::$tag_prefix"
-        fi
-        
+
       - name: Upload charm to charmhub
         uses: canonical/charming-actions/upload-charm@2.0.0-rc
         with:

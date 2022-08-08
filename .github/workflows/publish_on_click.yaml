@@ -37,7 +37,7 @@ jobs:
   publish-charm:
     name: Publish Charm
     runs-on: ubuntu-latest
-    needs: get-charm-matrix
+    needs: get-charm-paths
     strategy:
       fail-fast: false
       matrix: 

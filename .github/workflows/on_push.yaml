@@ -26,6 +26,7 @@ jobs:
   publish-charm:
     name: Publish Charm
     needs: tests
-    uses: ./.github/workflows/publish.yaml
+    # DEBUG: Trying out a different publish
+    uses: ./.github/workflows/publish_on_click.yaml
     secrets:
       charmcraft-credentials: "${{ secrets.CHARMCRAFT_CREDENTIALS }}"

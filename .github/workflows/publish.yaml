@@ -6,8 +6,9 @@ on:
     inputs:
       source_branch:
         description: Github branch from this repo to publish.  If blank, will use the default branch
-        required: false
         default: ''
+        required: false
+        type: string
     secrets:
       CHARMCRAFT_CREDENTIALS:
         required: true
@@ -17,10 +18,12 @@ on:
         description: CharmHub channel to publish to
         required: false
         default: 'latest/edge'
+        type: string
       source_branch:
         description: Github branch from this repo to publish.  If blank, will use the default branch
         required: false
         default: ''
+        type: string
 
 jobs:
   get-charm-paths:

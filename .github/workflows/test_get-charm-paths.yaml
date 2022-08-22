@@ -16,6 +16,7 @@ jobs:
           fetch-depth: 0
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 15
       - name: Get paths for all charms in repo
         id: get-charm-paths
         run: bash .github/workflows/get-charm-paths.sh

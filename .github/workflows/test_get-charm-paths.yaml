@@ -53,4 +53,5 @@ jobs:
       matrix:
         charm-path: ${{ fromJson(needs.get-charm-paths-bash.outputs.charm_paths) }}
     steps:
-      - run: echo "Got charm path: ${{ matrix.charm-path }}"
+      - run: |
+          echo "Got charm path: ${{ matrix.charm-path }}"

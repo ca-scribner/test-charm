@@ -2,6 +2,7 @@ name: Demo get-charm-paths
 
 on:
   workflow_call:
+    inputs:
 
 jobs:
   get-charm-paths-python:

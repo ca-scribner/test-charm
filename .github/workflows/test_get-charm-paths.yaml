@@ -27,7 +27,8 @@ jobs:
       matrix:
         charm-path: ${{ fromJson(needs.get-charm-paths-python.outputs.charm_paths) }}
     steps:
-      - run: echo "Got charm path: ${{ matrix.charm-path }}"
+      - run: |
+          echo "Got charm path: ${{ matrix.charm-path }}"
 
   get-charm-paths-bash:
     name: Generate the Charm Matrix content

@@ -14,7 +14,6 @@ jobs:
       - uses: actions/checkout@v2
         with: 
           fetch-depth: 0
-          ref: ${{ inputs.source_branch }}
       - name: Get paths for all charms in repo
         id: get-charm-paths
         run: bash .github/workflows/get-charm-paths.sh
@@ -40,7 +39,6 @@ jobs:
           echo "Got charm path: ${{ matrix.charm-path }}"
 
 
-
   get-charm-paths-bash:
     name: Generate the Charm Matrix content (bash)
     runs-on: ubuntu-latest
@@ -50,7 +48,6 @@ jobs:
       - uses: actions/checkout@v2
         with: 
           fetch-depth: 0
-          ref: ${{ inputs.source_branch }}
       - name: Get paths for all charms in this repo
         id: get-charm-paths
         uses: ca-scribner/github-actions-recipes/get-charm-paths@master
@@ -84,7 +81,6 @@ jobs:
       - uses: actions/checkout@v2
         with: 
           fetch-depth: 0
-          ref: ${{ inputs.source_branch }}
       - name: Get paths for all charms in this repo
         id: get-charm-paths
         uses: ca-scribner/github-actions-recipes/get-charm-paths-python@master

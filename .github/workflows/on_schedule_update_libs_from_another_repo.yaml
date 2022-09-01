@@ -2,13 +2,12 @@ name: Update Charm Libraries on Schedule from a Shared Workflow
 
 on: 
   schedule:
-    # Every day at 5:40PM UTC
-    - cron: '40 17 * * *'
+    # Every day at 7:27PM UTC
+    - cron: '27 19 * * *'
 
 jobs:
   bump-libraries:
     name: Check Charm Library Versions Using a Shared Workflow
-    uses: ./.github/workflows/update-libs.yaml
     uses: ca-scribner/test-multi-charm/.github/workflows/update-libs.yaml@main
     with:
       charmcraft_channel: 'latest/candidate'

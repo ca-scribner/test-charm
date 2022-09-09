@@ -1,0 +1,19 @@
+name: Update Charm Libraries on Schedule from a Shared Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      charmcraft_channel:
+        description: Channel from which to install charmcraft
+        default: 'latest/candidate'
+        required: false
+        type: string
+
+jobs:
+  bump-libraries:
+    name: Check Charm Library Versions Using a Shared Workflow
+    uses: canonical/charmed-kubeflow-workflows/workflows/update-libs.yaml@main
+    with:
+      charmcraft_channel: 'latest/candidate'
+    secrets:
+      CHARMCRAFT_CREDENTIALS: "${{ secrets.CHARMCRAFT_CREDENTIALS }}"

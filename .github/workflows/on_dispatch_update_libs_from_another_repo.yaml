@@ -1,4 +1,4 @@
-name: Update Charm Libraries on Schedule from a Shared Workflow
+name: Update Charm Libraries on dispatch from a Shared Workflow
 
 on:
   workflow_dispatch:

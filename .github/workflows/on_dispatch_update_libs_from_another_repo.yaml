@@ -12,7 +12,7 @@ on:
 jobs:
   bump-libraries:
     name: Check Charm Library Versions Using a Shared Workflow
-    uses: canonical/charmed-kubeflow-workflows/.github/workflows/update-libs.yaml@main
+    uses: canonical/charmed-kubeflow-workflows/.github/workflows/update-libs.yaml@v0.0.1
     with:
       charmcraft_channel: 'latest/candidate'
     secrets:

@@ -13,3 +13,4 @@ jobs:
       charmcraft_channel: 'latest/candidate'
     secrets:
       CHARMCRAFT_CREDENTIALS: "${{ secrets.CHARMCRAFT_CREDENTIALS }}"
+      PAT: "${{ secrets.PAT }}"

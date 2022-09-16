@@ -2,8 +2,8 @@ name: Update Charm Libraries on Schedule from a Shared Workflow
 
 on: 
   schedule:
-    # Every day at 15:50PM UTC
-    - cron: '50 15 * * *'
+    # Every day at 16:00PM UTC
+    - cron: '00 16 * * *'
 
 jobs:
   bump-libraries:

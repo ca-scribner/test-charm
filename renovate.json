@@ -9,7 +9,7 @@
   },
   "packageRules": [
     {
-      "matchPackagePatterns": ["^black$", "flake8", "pep8-naming", "isort", "codespell", "pytest"],
+      "matchPackagePatterns": ["ca-scribner-example-package", "^black$", "flake8", "pep8-naming", "isort", "codespell", "pytest"],
       "automerge": true
     }
   ]

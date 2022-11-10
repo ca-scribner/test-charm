@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.in
 #
-ca-scribner-example-package==0.0.1
+ca-scribner-example-package==0.0.2
     # via -r requirements.in
 ca-scribner-example-package2==0.0.2
     # via -r requirements.in

@@ -5,7 +5,10 @@
   "pip-compile": {
     "fileMatch": [
       "(^|/)requirements.*\\.in$"
-    ]
+    ],
+    "lockFileMaintenance": {
+      "schedule": null
+    }
   },
   "packageRules": [
     {

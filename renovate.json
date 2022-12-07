@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
+  "constraints": {
+    "python": "3.10"
+  },
   "dependencyDashboard": true,
   "pip-compile": {
     "fileMatch": [

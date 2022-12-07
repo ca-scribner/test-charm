@@ -8,7 +8,7 @@ ca-scribner-example-package==0.0.3
     # via -r ./requirements.in
 ca-scribner-example-package2==0.0.2
     # via -r ./requirements.in
-ops==1.5.3
+ops==1.5.4
     # via -r ./requirements.in
 pyyaml==6.0
     # via ops

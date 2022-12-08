@@ -14,7 +14,9 @@
     }
   },
   "pip_requirements": {
-    "ignorePaths": "(^|/)([\\w-]*)requirements\\.(txt|pip)$"
+    "ignorePaths": [
+      "(^|/)([\\w-]*)requirements\\.(txt|pip)$"
+    ]
   },
   "packageRules": [
     {

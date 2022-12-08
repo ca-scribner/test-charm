@@ -10,13 +10,12 @@
       "(^|/)requirements.*\\.in$"
     ],
     "lockFileMaintenance": {
+      "enabled": true,
       "schedule": null
     }
   },
   "pip_requirements": {
-    "ignorePaths": [
-      "(^|/)([\\w-]*)requirements\\.(txt|pip)$"
-    ]
+    "enabled": false
   },
   "packageRules": [
     {

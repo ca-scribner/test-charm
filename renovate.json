@@ -13,6 +13,9 @@
       "schedule": null
     }
   },
+  "pip_requirements": {
+    "ignorePaths": "(^|/)([\\w-]*)requirements\\.(txt|pip)$"
+  },
   "packageRules": [
     {
       "matchPackagePatterns": ["ca-scribner-example-package", "^black$", "flake8", "pep8-naming", "isort", "codespell", "pytest"],
